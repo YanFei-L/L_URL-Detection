@@ -259,9 +259,9 @@ python efficiency_benchmark/plot_benchmark_from_json.py
 - **解释性**：`figures/shap_*.png`
 - **性能基准**：`benchmark_results.json`、`figures/benchmark_performance_specs.png`
 
-## 6. 服务器/云端推理性能基准测试（`simple_benchmark.py`）
+## 6. 服务器/云端推理性能基准测试（`efficiency_benchmark/simple_benchmark.py`）
 
-本项目提供了一个面向“服务器/云端部署场景”的简单推理基准测试脚本 `simple_benchmark.py`，用于评估 **XGBoost 模型在 CPU 上的批量推理吞吐与延迟稳定性**。
+本项目提供了一个面向“服务器/云端部署场景”的简单推理基准测试脚本 `efficiency_benchmark/simple_benchmark.py`，用于评估 **XGBoost 模型在 CPU 上的批量推理吞吐与延迟稳定性**。
 
 ### 6.1 测试环境（脚本内硬编码展示）
 
@@ -275,10 +275,10 @@ python efficiency_benchmark/plot_benchmark_from_json.py
 
 ### 6.2 测试方法与默认参数
 
-`simple_benchmark.py` 的默认测试方式如下：
+`efficiency_benchmark/simple_benchmark.py` 的默认测试方式如下：
 
 - **模型**：读取 `models/XGBoost.joblib`，调用 `model.predict()`
-- **数据**：读取 `test_data.csv`，并去掉 `url`、`label` 列后作为特征矩阵；固定抽样 `n=1000`（`random_state=42`）作为基准 batch
+- **数据**：读取 `data/test_data.csv`，并去掉 `url`、`label` 列后作为特征矩阵；固定抽样 `n=1000`（`random_state=42`）作为基准 batch
 - **预热（Warm-up）**：默认 `warmup_rounds=50`，用于降低首次运行的冷启动影响
 - **重复计时（Repeats）**：默认 `repeats=500`，每次对同一 batch 预测并用 `time.perf_counter()` 计时，得到 500 个“1000 条样本批处理”的耗时
 - **去极值（Trimmed Mean）**：默认 `trim_count=10`，会在统计时丢弃最快 10 次与最慢 10 次，从而得到更稳健的平均值（减少系统抖动/偶发抢占造成的极端值影响）
@@ -303,7 +303,7 @@ python efficiency_benchmark/plot_benchmark_from_json.py
 如需从 JSON 重新绘图（避免重跑 benchmark），可执行：
 
 ```bash
-python plot_benchmark_from_json.py
+python efficiency_benchmark/plot_benchmark_from_json.py
 ```
 
 ### 6.5 本仓库已有的参考结果（来自 `benchmark_results.json`）
@@ -318,5 +318,5 @@ python plot_benchmark_from_json.py
 ## 7. 重要约定与注意事项
 
 - **标签定义**：`0 = Malicious`，`1 = Benign`
-- **运行路径**：建议始终在仓库根目录运行脚本（因为路径写死为 `./`）。
+- **运行路径**：脚本不依赖当前工作目录；推荐在仓库根目录运行 `run_pipeline.py`，单个脚本也可在任意目录直接运行。
 - **可重复性**：数据划分与采样大量使用 `random_state=42`。
