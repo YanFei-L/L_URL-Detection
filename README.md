@@ -320,7 +320,3 @@ python plot_benchmark_from_json.py
 - **标签定义**：`0 = Malicious`，`1 = Benign`
 - **运行路径**：建议始终在仓库根目录运行脚本（因为路径写死为 `./`）。
 - **可重复性**：数据划分与采样大量使用 `random_state=42`。
-
----
-
-如果你希望我进一步把“各脚本的参数/可配置项”做成统一的命令行接口（例如把 `TARGET_COUNT`、训练/测试比例、XGBoost 超参等都改为 CLI 参数，并补齐 `requirements.txt`），告诉我你的期望即可。
