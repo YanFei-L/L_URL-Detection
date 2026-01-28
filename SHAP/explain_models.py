@@ -9,8 +9,9 @@ import json
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
 
 # Define paths
-base_dir = r"./"
-test_data_path = os.path.join(base_dir, "test_data.csv")
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_dir = os.path.join(base_dir, "data")
+test_data_path = os.path.join(data_dir, "test_data.csv")
 evaluation_results_path = os.path.join(base_dir, "evaluation_results.json")
 benchmark_results_path = os.path.join(base_dir, "benchmark_results.json")
 models_dir = os.path.join(base_dir, "models")

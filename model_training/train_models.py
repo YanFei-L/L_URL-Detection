@@ -8,9 +8,10 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from xgboost import XGBClassifier
 
 # Define paths
-base_dir = r"./"
-train_data_path = os.path.join(base_dir, "train_data.csv")
-test_data_path = os.path.join(base_dir, "test_data.csv")
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_dir = os.path.join(base_dir, "data")
+train_data_path = os.path.join(data_dir, "train_data.csv")
+test_data_path = os.path.join(data_dir, "test_data.csv")
 models_dir = os.path.join(base_dir, "models")
 results_path = os.path.join(base_dir, "evaluation_results.json")
 

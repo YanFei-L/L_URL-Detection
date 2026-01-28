@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 def _run_step(project_dir: str, script_name: str) -> None:
-    script_path = os.path.join(project_dir, script_name)
+    script_path = os.path.abspath(os.path.join(project_dir, script_name))
     if not os.path.exists(script_path):
         raise FileNotFoundError(f"Script not found: {script_path}")
 
@@ -36,17 +36,17 @@ def main() -> int:
 
     steps = []
     if not args.skip_preprocess:
-        steps.append("data_preprocess.py")
+        steps.append(os.path.join("data", "data_preprocess.py"))
     if not args.skip_feature:
-        steps.append("run_feature_extraction.py")
+        steps.append(os.path.join("feature_extraction", "run_feature_extraction.py"))
     if not args.skip_train:
-        steps.append("train_models.py")
+        steps.append(os.path.join("model_training", "train_models.py"))
     if not args.skip_charts:
-        steps.append("generate_charts.py")
+        steps.append(os.path.join("model_training", "generate_charts.py"))
     if not args.skip_shap:
-        steps.append("explain_models.py")
+        steps.append(os.path.join("SHAP", "explain_models.py"))
     if args.run_benchmark:
-        steps.append("simple_benchmark.py")
+        steps.append(os.path.join("efficiency_benchmark", "simple_benchmark.py"))
 
     if not steps:
         print("No steps selected. Exiting.")

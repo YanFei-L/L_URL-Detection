@@ -2,11 +2,12 @@ import csv
 import os
 
 # Define paths
-base_dir = r"./"
-top1m_path = os.path.join(base_dir, "top-1m.csv")
-verified_online_path = os.path.join(base_dir, "verified_online.csv")
-white_list_path = os.path.join(base_dir, "white_list.csv")
-block_list_path = os.path.join(base_dir, "block_list.csv")
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_dir = os.path.join(base_dir, "data")
+top1m_path = os.path.join(data_dir, "top-1m.csv")
+verified_online_path = os.path.join(data_dir, "verified_online.csv")
+white_list_path = os.path.join(data_dir, "white_list.csv")
+block_list_path = os.path.join(data_dir, "block_list.csv")
 
 TARGET_COUNT = 40000
 

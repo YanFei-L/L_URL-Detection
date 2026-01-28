@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-base_dir = r"./"
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 figures_dir = os.path.join(base_dir, "figures")
 benchmark_results_path = os.path.join(base_dir, "benchmark_results.json")
 summary_txt_path = os.path.join(base_dir, "1.txt")
+
 
 SERVER_SPECS = {
     "System": "Ubuntu 24.04",

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 
 
-BASE_DIR = r"./"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 FIGURES_DIR = os.path.join(BASE_DIR, "figures")
 
 

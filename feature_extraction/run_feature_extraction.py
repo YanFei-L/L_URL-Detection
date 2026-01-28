@@ -5,11 +5,12 @@ from feature_extractor import FeatureExtractor
 from tqdm import tqdm
 
 # Define paths
-base_dir = r"./"
-white_list_path = os.path.join(base_dir, "white_list.csv")
-block_list_path = os.path.join(base_dir, "block_list.csv")
-train_data_path = os.path.join(base_dir, "train_data.csv")
-test_data_path = os.path.join(base_dir, "test_data.csv")
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_dir = os.path.join(base_dir, "data")
+white_list_path = os.path.join(data_dir, "white_list.csv")
+block_list_path = os.path.join(data_dir, "block_list.csv")
+train_data_path = os.path.join(data_dir, "train_data.csv")
+test_data_path = os.path.join(data_dir, "test_data.csv")
 
 def load_and_extract(file_path, label_value, extractor):
     print(f"Processing {file_path}...")

@@ -9,9 +9,10 @@ import numpy as np
 import seaborn as sns
 
 # Define paths
-base_dir = r"./"
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_dir = os.path.join(base_dir, "data")
 models_dir = os.path.join(base_dir, "models")
-test_data_path = os.path.join(base_dir, "test_data.csv")
+test_data_path = os.path.join(data_dir, "test_data.csv")
 figures_dir = os.path.join(base_dir, "figures")
 benchmark_results_path = os.path.join(base_dir, "benchmark_results.json")
 
