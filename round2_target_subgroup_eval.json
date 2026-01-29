@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "generated_at": "2026-01-29T20:51:14",
+    "threshold": 0.5,
+    "other_label": "Other",
+    "paths": {
+      "test_data": "data\\test_data.csv",
+      "verified_online": "data\\verified_online.csv",
+      "model": "models\\XGBoost.joblib"
+    },
+    "verified_limit_rows": 40000
+  },
+  "overall": {
+    "malicious_samples": 12000,
+    "tp_malicious_pred0": 11964,
+    "fn_malicious_pred1": 36,
+    "tpr_malicious": 0.997,
+    "missed_threat_rate": 0.003
+  },
+  "by_group": {
+    "Non-Other": {
+      "samples": 627,
+      "tp_malicious_pred0": 623,
+      "fn_malicious_pred1": 4,
+      "tpr_malicious": 0.9936204146730463,
+      "missed_threat_rate": 0.006379585326953748
+    },
+    "Other": {
+      "samples": 11373,
+      "tp_malicious_pred0": 11341,
+      "fn_malicious_pred1": 32,
+      "tpr_malicious": 0.9971863184735777,
+      "missed_threat_rate": 0.002813681526422228
+    }
+  },
+  "diagnostics": {
+    "missing_target_count_in_malicious_test": 0
+  }
+}

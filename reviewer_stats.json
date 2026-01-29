@@ -1,0 +1,111 @@
+{
+  "project_root": "d:\\Project\\L_URL-Detection",
+  "paths": {
+    "white_list": "d:\\Project\\L_URL-Detection\\data\\white_list.csv",
+    "block_list": "d:\\Project\\L_URL-Detection\\data\\block_list.csv",
+    "verified_online": "d:\\Project\\L_URL-Detection\\data\\verified_online.csv",
+    "xgb_model": "d:\\Project\\L_URL-Detection\\models\\XGBoost.joblib"
+  },
+  "environment": {
+    "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "xgboost_version": "3.1.3",
+    "xgboost_import_error": null,
+    "shap_version": "0.50.0",
+    "shap_import_error": null,
+    "sklearn_version": "1.8.0",
+    "sklearn_import_error": null,
+    "pandas_version": "3.0.0",
+    "pandas_import_error": null
+  },
+  "xgboost_model": {
+    "available": true,
+    "model_path": "d:\\Project\\L_URL-Detection\\models\\XGBoost.joblib",
+    "objective": "binary:logistic",
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": "6",
+      "learning_rate_eta": "0.300000012",
+      "subsample": "1",
+      "colsample_bytree": "1",
+      "min_child_weight": "1",
+      "gamma": "0",
+      "reg_lambda": "1",
+      "reg_alpha": "0",
+      "eval_metric": "logloss",
+      "random_state": 42
+    }
+  },
+  "dataset_dedup": {
+    "white_rows": 40000,
+    "white_unique": 40000,
+    "block_rows": 40000,
+    "block_unique": 39994,
+    "combined_rows": 80000,
+    "combined_unique": 79993,
+    "duplicates_total": 7,
+    "duplicates_within_block": 6,
+    "duplicates_within_white": 0,
+    "cross_source_duplicates": 1
+  },
+  "phishtank_target_distribution": {
+    "total_rows": 40000,
+    "distinct_targets": 82,
+    "top_k": 10,
+    "top_targets": [
+      {
+        "target": "Other",
+        "count": 37860,
+        "share_percent": 94.65
+      },
+      {
+        "target": "Internal Revenue Service",
+        "count": 548,
+        "share_percent": 1.37
+      },
+      {
+        "target": "Allegro",
+        "count": 399,
+        "share_percent": 0.9974999999999999
+      },
+      {
+        "target": "Microsoft",
+        "count": 134,
+        "share_percent": 0.335
+      },
+      {
+        "target": "Optus",
+        "count": 129,
+        "share_percent": 0.3225
+      },
+      {
+        "target": "DHL",
+        "count": 103,
+        "share_percent": 0.2575
+      },
+      {
+        "target": "AT&amp;T",
+        "count": 73,
+        "share_percent": 0.1825
+      },
+      {
+        "target": "Amazon.com",
+        "count": 61,
+        "share_percent": 0.1525
+      },
+      {
+        "target": "Bradesco",
+        "count": 60,
+        "share_percent": 0.15
+      },
+      {
+        "target": "Netflix",
+        "count": 52,
+        "share_percent": 0.13
+      }
+    ],
+    "remaining_targets_count": 72,
+    "remaining_rows": 581,
+    "remaining_share_percent": 1.4525
+  }
+}

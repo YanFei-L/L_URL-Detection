@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "generated_at": "2026-01-29T20:56:43",
+    "model_type": "bilstm",
+    "label_convention": {
+      "0": "Malicious",
+      "1": "Benign"
+    },
+    "threshold": 0.5,
+    "data": {
+      "white_list": "data\\white_list.csv",
+      "block_list": "data\\block_list.csv",
+      "train_size": 56000,
+      "test_size": 24000,
+      "test_split_ratio": 0.3,
+      "seed": 42
+    },
+    "preprocess": {
+      "max_len": 200,
+      "vocab_size": 92,
+      "max_vocab_size": 0,
+      "embed_dim": 64
+    },
+    "train": {
+      "epochs": 3,
+      "batch_size": 256,
+      "lr": 0.001
+    }
+  },
+  "metrics": {
+    "accuracy": 0.9983333333333333,
+    "precision": 0.9973386560212908,
+    "recall": 0.9993333333333333,
+    "f1": 0.9983349983349983,
+    "auc": 0.9994645069444446,
+    "training_time_sec": 88.96450066566467,
+    "inference_time_sec": 3.781863212585449,
+    "latency_per_url_ms": 0.15757763385772705,
+    "confusion_matrix": {
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          11968,
+          32
+        ],
+        [
+          8,
+          11992
+        ]
+      ]
+    }
+  }
+}

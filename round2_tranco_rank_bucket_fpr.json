@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "generated_at": "2026-01-29T20:51:31",
+    "threshold": 0.5,
+    "paths": {
+      "top1m": "data\\top-1m.csv",
+      "model": "models\\XGBoost.joblib"
+    },
+    "buckets": {
+      "bucket1": {
+        "start": 1,
+        "end": 40000
+      },
+      "bucket2": {
+        "start": 200000,
+        "end": 240000
+      },
+      "bucket3": {
+        "start": 600000,
+        "end": 640000
+      }
+    },
+    "label_convention": {
+      "predicted_label": {
+        "0": "Malicious",
+        "1": "Benign"
+      }
+    }
+  },
+  "results": {
+    "bucket1": {
+      "samples": 40000,
+      "fpr": 0.000275,
+      "feature_stats": {
+        "url_length": {
+          "mean": 20.20225,
+          "median": 20.0
+        },
+        "path_length": {
+          "mean": 0.0,
+          "median": 0.0
+        },
+        "hostname_entropy": {
+          "mean": 3.131619707351422,
+          "median": 3.1699250014423126
+        }
+      }
+    },
+    "bucket2": {
+      "samples": 40001,
+      "fpr": 0.0025999350016249595,
+      "feature_stats": {
+        "url_length": {
+          "mean": 21.467463313417163,
+          "median": 21.0
+        },
+        "path_length": {
+          "mean": 0.0,
+          "median": 0.0
+        },
+        "hostname_entropy": {
+          "mean": 3.220359929104639,
+          "median": 3.2516291673878226
+        }
+      }
+    },
+    "bucket3": {
+      "samples": 40001,
+      "fpr": 0.0028499287517812053,
+      "feature_stats": {
+        "url_length": {
+          "mean": 21.71380715482113,
+          "median": 21.0
+        },
+        "path_length": {
+          "mean": 0.0,
+          "median": 0.0
+        },
+        "hostname_entropy": {
+          "mean": 3.2310866822689213,
+          "median": 3.2516291673878226
+        }
+      }
+    }
+  }
+}
